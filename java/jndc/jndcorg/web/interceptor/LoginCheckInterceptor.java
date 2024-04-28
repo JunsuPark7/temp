@@ -1,0 +1,34 @@
+package jndc.jndcorg.web.interceptor;
+
+import jndc.jndcorg.web.session.SessionConst;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@Slf4j
+public class LoginCheckInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        HttpSession session = request.getSession(false);
+
+        if((session == null) || session.getAttribute(SessionConst.LOGIN_USER) == null){
+            String requestURI = request.getRequestURI();
+            log.info("세션만료로그 [{}]",requestURI);
+
+            // 세션 만료 메시지.
+            String errorMessage = "세션이 만료 되었습니다.";
+            // JavaScript 코드를 사용하여 메시지 박스를 띄우도록 응답에 추가
+            String script = "<script>alert(decodeURIComponent('" + errorMessage + "')); window.location.href='/';</script>";
+            response.setContentType("text/html;charset=UTF-8");
+            response.getWriter().write(script);
+
+            return false;
+        }
+        return true;
+    }
+
+}
