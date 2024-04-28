@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>전남개발공사</title>
+    <link th:href="@{/css/login.css}" href="/css/login.css" rel="stylesheet">
+    <script th:src="@{/js/login.js}" type="text/javascript" defer></script>
+    <script th:src="@{/js/fontawesome.all.min.js}"></script>
+</head>
+
+
+
+<body>
+
+<img class="wave" th:src="@{/img/login/wave.png}" />
+<div class="container">
+    <div class="img">
+        <img th:src="@{/img/login/bg.svg}" />
+    </div>
+    <div class="login-content">
+        <form action="item.html" th:action="@{/userLogin}" th:object="${loginUser}" method="post">
+            <h2 class="title">전남개발공사 <br> 조직도 <span style="color:#61BB47">L</span>O<span style="color:#026EB9">G</span>IN</h2>
+            <img th:src="@{/img/login/avatar.svg}" />
+            <div th:if="${#fields.hasGlobalErrors()}">
+                <p class="field-error" style="color:red;" th:each="err : ${#fields.globalErrors()}"
+                   th:text="${err}">전체 오류 메시지</p>
+            </div>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="div">
+                    <input type="text" id="UiId" th:field="*{UiId}" class="input"
+                           th:errorclass="field-error"
+                           placeholder="직원 아이디"
+                    >
+                    <p class="field-error" th:errors="*{UiId}">아이디오류</p>
+
+                </div>
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <input type="password" id="UiPassword" th:field="*{UiPassword}"
+                           class="input"
+                           placeholder="비밀번호"
+                           th:errorclass="field-error">
+                    <p class="field-error" th:errors="*{UiPassword}">비밀번호오류</p>
+                </div>
+            </div>
+            <a href="#" th:href="@{/users/find}" style="margin-top:8px;">비밀번호 찾기</a>
+            <input type="submit" class="btn" value="로그인">
+            <input type="button"
+                   class="btn"
+                   th:onclick="|location.href='@{/users/add}'|"
+                   value="회원가입">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

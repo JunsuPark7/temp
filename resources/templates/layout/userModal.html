@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- 모달 창 -->
+<div class="modal fade" id="commentModal" tabindex="999" aria-labelledby="exampleModalLabel" aria-hidden="true" th:fragment="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">문의 내용</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="commentCategory">카테고리</label>
+                    <select id="commentCategory" name="commentCategory" class="form-select">
+                        <option value="일반문의">일반문의</option>
+                        <option value="서비스제안">서비스제안</option>
+                        <option value="버그사항">버그사항</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="commentContent">문의내용</label>
+                    <textarea id="commentContent" name="commentContent" class="form-control" rows="8" maxlength="80" placeholder="문의내용"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="CommentConfirmButton" class="btn btn_modal btn-success">보내기</button>
+                <button type="button" class="btn btn_modal btn-danger" data-bs-dismiss="modal">취소</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,245 @@
+/*
+body .sidebar, .content, .header, .top-nav, .navbar-toggler, .accordion, .accordion-button, .accordion-body,
+.search-bar, .table-header, .table-row, .table-hover>tbody>tr:hover>*, .search-conditions,
+.form-select, .modal-content, .form-control, .profile-header, .modal-header .btn-close {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.table-dark{
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+*/
+
+/* 다크 모드에 대한 스타일 */
+body.dark-mode{
+    background-color: #202124; /* 다크 모드 배경색 */
+    color: #ffffff; /* 다크 모드 텍스트 색상 */
+}
+
+.dark-mode .sidebar {
+    background-color: #272525; /* 다크 모드 사이드바 배경색 */
+    background-image: url('/img/bg/adminBG-dark-mode.png'); /* 다크 모드 배경 이미지 */
+    color: #ffffff; /* 다크 모드 텍스트 색상 */
+}
+
+
+.dark-mode .sidebar .nav-link.active {
+    background-color: #303134; /* 다크 모드 활성화된 사이드바 링크 배경색 */
+}
+
+.dark-mode .sidebar .nav-link:hover {
+    background-color: #303134; /* 다크 모드 사이드바 링크 호버 배경색 */
+}
+
+.dark-mode .content {
+    background-color: #202124; /* 다크 모드 컨텐츠 배경색 */
+    color: #f3f3f3; /* 다크 모드 컨텐츠 텍스트 색상 */
+}
+
+.dark-mode .header {
+    background-color: #202124; /* 다크 모드 헤더 배경색 */
+    color: #f3f3f3; /* 다크 모드 헤더 텍스트 색상 */
+}
+
+.dark-mode .top-nav {
+    color: #f3f3f3; /* 다크 모드 탑 네비게이션 텍스트 색상 */
+}
+
+
+.dark-mode .navbar-toggler{
+    color:f3f3f3;
+ background-color: #121212;
+}
+
+
+.dark-mode .accordion{
+    --bs-accordion-bg:#121212 !important;
+}
+
+.dark-mode .accordion-button{
+    background:#121212;
+    color:#f3f3f3;
+}
+
+.dark-mode .accordion-body{
+    color:#f3f3f3;
+}
+.dark-mode ..accordion-button:not(.collapsed){
+    background-color: #454357
+}
+
+
+
+
+/* 다크 모드 스타일 */
+.dark-mode .search-bar {
+    background-color: #000000; /* 다크 모드 검색 바 배경색 */
+    color: #cbd5e0; /* 다크 모드 검색 바 텍스트 색상 */
+}
+
+.dark-mode .search-bar::placeholder {
+    color: #f3f3f3; /* 다크 모드 검색 바 placeholder 텍스트 색상 */
+}
+
+.dark-mode .table-header {
+    background-color: #36393f; /* 다크 모드 테이블 헤더 배경색 */
+}
+
+.dark-mode .table-row {
+    border-bottom: 1px solid #f3f3f3; /* 다크 모드 테이블 행 경계선 색상 */
+}
+
+.dark-mode .table-hover>tbody>tr:hover>* {
+    background: #8592a7; /* 다크 모드 테이블 행 호버 배경색 */
+}
+
+
+.dark-mode .table-row:last-child {
+    border-bottom: none; /* 다크 모드 테이블 마지막 행의 하단 경계선 제거 */
+}
+
+.dark-mode .search-conditions {
+    background-color: #272525; /* 다크 모드 검색 조건 배경색 */
+}
+
+
+.dark-mode .form-select{
+    background-color: #303134; /* 다크 모드 검색 바 배경색 */
+    color: #f3f3f3; /* 다크 모드 검색 바 텍스트 색상 */
+}
+
+.dark-mode .modal-content {
+      background-color: #3e3b3b; /* 다크 모드 검색 바 배경색 */
+    color: #f3f3f3; /* 다크 모드 검색 바 텍스트 색상 */
+}
+
+.dark-mode .modal-header .btn-close{
+    color: #f3f3f3; /* 다크 모드 검색 바 텍스트 색상 */
+}
+
+
+.dark-mode .form-control{
+    background-color: #303134; /* 다크 모드 검색 바 배경색 */
+    color: #f3f3f3; /* 다크 모드 검색 바 텍스트 색상 */
+}
+
+
+.dark-mode .form-control::placeholder {
+    color: #f3f3f3; /* 다크 모드 검색 바 placeholder 텍스트 색상 */
+}
+
+.dark-mode .form-group label {
+    color: #f3f3f3; /* 다크 모드 검색 바 텍스트 색상 */
+}
+
+
+.dark-mode .profile-header{
+  background-color: #3e3b3b; /* 다크 모드 검색 바 배경색 */
+}
+
+
+.dark-mode .clickable::before {
+    background-color: #dddde5; /* 밑줄 색상 */
+}
+
+
+
+/* 다크모드 토글*/
+
+
+  .navbar-right{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .toggle-slot {
+    position: relative;
+    height:2.7em;
+    width: 6em;
+    border: 5px solid #e4e7ec;
+    border-radius: 10em;
+    background-color: white;
+    box-shadow: 0px 0px 15px #e4e7ec;
+    transition: background-color 250ms;
+  }
+
+  .toggle-checkbox:checked ~ .toggle-slot {
+    background-color: #374151;
+  }
+
+  .toggle-button {
+    transform: translate(3.25em, 0.3em);
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+    background-color: #ffeccf;
+    box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+
+  .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+    background-color: #485367;
+    box-shadow: inset 0px 0px 0px 0.75em white;
+    transform: translate(0.5em, 0.3em);
+  }
+
+
+
+  .sun-icon {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    color: #ffbb52;
+  }
+
+  .sun-icon-wrapper {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    opacity: 1;
+    transform: translate(0.5em, 0.3em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+
+  .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+    opacity: 0;
+    transform: translate(2em, 2em) rotate(0deg);
+  }
+
+
+
+
+
+  .moon-icon {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    color: white;
+  }
+
+  .moon-icon-wrapper {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    opacity: 0;
+    transform: translate(1em, 1em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  }
+
+  .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+    opacity: 1;
+    transform: translate(3.25em, 0.3em) rotate(-15deg);
+  }
+

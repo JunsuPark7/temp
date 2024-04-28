@@ -1,0 +1,75 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/userHeadTag :: userHead ('전남개발공사 조직도 마이페이지-수정', 'userMyPageForm.css')}"></head>
+<script th:src="@{/js/user/userMyPageForm.js}" type="text/javascript"></script>
+<script th:src="@{/js/user/screenInput.js}" type="text/javascript"></script>
+<body th:classappend="${darkModeCheck} ? 'dark-mode' : ''">
+
+    <div class="profile-header">
+        <div class="profile-image-container">
+            <img alt="프로필 이미지" class="profile-image" height="150" width="150" id="previewImage"
+                 th:src="${user.img != null} ? |/images/${user.img}| : |/images/default_profile.png|"
+            />
+            <button type="button" id="chooseFileButton" class="profile-edit-button">수정</button>
+        </div>
+        <div class="profile-name" th:text="${user.name}">사용자이름</div>
+    </div>
+
+
+
+    <div class="contents">
+
+        <form th:action="@{/user/updateUser}" th:object="${user}" method="post" enctype="multipart/form-data" id="updateForm">
+            <div class="profile-container mt-3 profile-info">
+                <div class="row profile">
+                    <div class="col-3 info-key">소속부서</div>
+                    <div class="col-9 info-value"><input th:value="*{dept.deptName}" type="text" value="부서" disabled></div>
+                </div>
+                <div class="row profile">
+                    <div class="col-3 info-key">직위</div>
+                    <div class="col-9 info-value"><input th:value="*{role}" type="text" value="-" disabled></div>
+                </div>
+                <div class="row profile">
+                    <div class="col-3 info-key">업무</div>
+                    <div class="col-9 info-value"><input th:value="*{work}" type="text" value="전력체제기획단 사무" disabled></div>
+                </div>
+                <div class="row profile">
+                    <div class="col-3 info-key">구내전화</div>
+                    <div class="col-9 info-value"><input th:value="*{number}" type="text" value="061-286-5563" disabled></div>
+                </div>
+                <div class="row profile">
+                    <div class="col-3 info-key">휴대전화</div>
+                    <div class="col-9 info-value">
+                        <input th:field="*{phoneNumber}" th:errorclass="field-error"
+                               type="text" maxlength="13">
+                    </div>
+                </div>
+                <div class="row profile">
+                    <div class="col-3 info-key">이메일</div>
+                    <div class="col-9 info-value"><input th:field="*{email}" type="text"></div>
+                </div>
+                <div class="row profile">
+                    <div class="col-3 info-key">(도메인)</div>
+                    <div class="col-9 info-value">
+                        <select id="domain" name="domain">
+                            <option value="direct_input">----직접입력----</option>
+                            <option value="@jndc.co.kr">@jndc.co.kr</option>
+                            <option value="@gmail.com">@gmail.com</option>
+                            <option value="@naver.com">@naver.com</option>
+                            <option value="@daum.net">@daum.net</option>
+                            <option value="@hanmail.net">@hanmail.net</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="hidden" name="userId" th:value="*{userId}">
+                <input type="file" name="file" id="fileInput" style="display:none;" onchange="previewImage(event)" />
+                <button id="confirmButton" class="mobile-button" type="submit">수정요청</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div th:replace="~{layout/userFooter :: footer}"></div>
+    <div th:replace="~{layout/userModal :: modal}"></div>
+</body>
+
+</html>

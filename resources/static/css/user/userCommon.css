@@ -1,0 +1,246 @@
+body {
+	font-family:'Noto Sans KR',sans-serif;
+	background-color:#F0F2F5;
+}
+
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 색상 상속 */
+}
+
+
+.contents{
+    width:100%;
+    max-width:960px;
+    margin: 0 auto; /* 좌우 마진을 자동으로 설정하여 가운데 정렬합니다. */
+    box-sizing: border-box; /* 패딩을 포함한 전체 박스 크기를 설정합니다. */
+    margin-bottom: 70px;
+}
+
+.footer_container{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background-color:white;
+    border-top:1px solid #ccc;
+}
+
+.footer {
+	padding:10px 0;
+	width:100%;
+	background-color:white;
+    margin:0 auto;
+    max-width:960px;
+}
+.footer-icon {
+	text-align:center;
+	color:#6c757d;
+	font-size:20px;
+	width:25%;
+}
+.footer-icon.active {
+	color:#37871C;
+	font-weight:bold;
+}
+.footer-text {
+	font-size: 12px;
+}
+
+
+
+
+
+.share{
+  display:block;
+  width:45px;
+  height:45px;
+  background:#65a522;
+  position:fixed;
+  border:2px solid white;
+  bottom:50px;
+  right:0%;
+  z-index:999;
+  text-align:center;
+  overflow:hidden;
+  line-height:65px;
+  font-size:1.2em;
+  color:#fff;
+  -moz-box-shadow: 0px 3px 9px rgba(0,0,0,.5);
+
+  border-radius:50px;
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}
+
+.share  svg {
+	margin-top:13px;
+}
+.one svg, .two svg, .three svg{
+    margin-top:13px;
+}
+
+.share:hover{
+  cursor:pointer;
+}
+
+.one, .two, .three{
+  position:fixed;
+  width:45px;
+  height:45px;
+  color:#fff;
+  border-radius:50px;
+  text-align:center;
+  line-height:49px;
+  font-size:1.2em;
+   bottom:50px;
+   right:0%;
+   -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+  -webkit-transition:transform  .3s ease-in-out;
+  transition:transform .3s ease-in-out;
+}
+
+.one:hover,
+.two:hover,
+.three:hover{
+  cursor:pointer;
+}
+
+.one i, .two i, .three i{
+  display:none;
+}
+
+.one{
+  background: #919fab;
+}
+
+.two{
+  background: #79c362;
+}
+
+.three{
+  background: #5163ef;
+}
+
+
+
+.one div, .two div, .three div{
+	background:#9ea4a4;
+	border-radius:20px;
+	right:200%;
+	position:relative;
+	width:80px;
+	font-size:16px;
+	bottom:33px;
+	display:none;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+
+
+
+.modal-content {
+    margin-top:140px;
+    border-radius: 16px;
+    padding: 20px; /* Overall padding for modal content */
+}
+.modal-header {
+    border-bottom: 1px solid #dee2e6; /* Light grey border */
+    padding-bottom: 10px;
+}
+.modal-body {
+    padding-top: 20px;
+}
+.modal-footer {
+    border-top: 1px solid #dee2e6; /* Light grey border */
+    padding-top: 10px;
+    padding-bottom: 0;
+    display: flex; /* Flex layout for buttons */
+    justify-content: space-between; /* Space between buttons */
+}
+
+.btn_modal {
+    padding: 10px 0;
+    flex-grow: 1; /* Buttons grow to fill space */
+}
+
+
+.form-group {
+    display: flex; /* Align label and input box horizontally */
+    justify-content: center; /* Distribute space evenly between label and input box */
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 10px;
+    vertical-align: center;
+}
+.form-group label {
+    width: 40%;
+    color: #2455DF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 검색, 조직도 테이블 유저 */
+
+
+.contact-card {
+  background-color: white;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  /*display: flex;
+  align-items: center;*/
+}
+
+.contact-card-contents{
+    display: flex;
+  align-items: center;
+}
+
+.contact-image {
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.contact-info {
+  line-height: 1.5;
+}
+.contact-name {
+  font-weight: bold;
+}
+.contact-position {
+  color: #666;
+}
+.contact-info .contact-phone{
+  color: #004F9F;
+}
+
+
+
+.field-error {
+ border-color: #dc3545;
+ color: #dc3545;
+ }

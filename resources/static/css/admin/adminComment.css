@@ -1,0 +1,104 @@
+.btn-log-delete{
+    background-color: #bf1818;
+}
+
+
+
+.modal-content {
+    border-radius: 16px;
+    padding: 20px; /* Overall padding for modal content */
+}
+.modal-header {
+    border-bottom: 1px solid #dee2e6; /* Light grey border */
+    padding-bottom: 10px;
+}
+.modal-body {
+    padding-top: 20px;
+}
+.modal-footer {
+    border-top: 1px solid #dee2e6; /* Light grey border */
+    padding-top: 10px;
+    padding-bottom: 0;
+    display: flex; /* Flex layout for buttons */
+    justify-content: space-between; /* Space between buttons */
+}
+
+
+
+.form-group {
+    display: flex; /* Align label and input box horizontally */
+    justify-content: center; /* Distribute space evenly between label and input box */
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 10px;
+    vertical-align: center;
+}
+.form-group label {
+    width: 40%;
+    color: #2455DF;
+}
+
+
+
+
+  .profile-header {
+     background-color: #ECECEC;
+     color: white;
+     text-align: center;
+     padding: 10px 0;
+     margin-bottom:10px;
+     border-radius:20px;
+ }
+
+ .profile-header:hover{
+    cursor: pointer;
+    background-color: #5a6cf3;
+ }
+
+
+ .profile-image {
+     background-color: white;
+     border-radius: 50%;
+     padding: 5px;
+     margin-bottom: 10px;
+ }
+
+
+
+.btn_modal {
+    padding: 10px 0;
+    flex-grow: 1; /* Buttons grow to fill space */
+}
+
+.error-tr{
+    font-weight: bold;
+}
+
+.error-value{
+    color:#bf1818 !important;
+}
+
+
+.clickable {
+    cursor: pointer;
+    color: rgb(54, 54, 185); /* 클릭 가능한 텍스트의 색상 */
+    position: relative; /* 상대 위치 지정 */
+  }
+
+.clickable::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    bottom: 8%; /* 텍스트 아래쪽으로 이동 */
+    background-color: blue; /* 밑줄 색상 */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out; /* 애니메이션 효과 */
+  }
+
+  .clickable:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+

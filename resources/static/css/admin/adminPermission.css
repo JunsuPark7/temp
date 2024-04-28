@@ -1,0 +1,36 @@
+
+.modal-content {
+    border-radius: 16px;
+    padding: 20px; /* Overall padding for modal content */
+}
+.modal-header {
+    border-bottom: 1px solid #dee2e6; /* Light grey border */
+    padding-bottom: 10px;
+}
+.modal-body {
+    padding-top: 20px;
+}
+.modal-footer {
+    border-top: 1px solid #dee2e6; /* Light grey border */
+    padding-top: 10px;
+    padding-bottom: 0;
+    display: flex; /* Flex layout for buttons */
+    justify-content: space-between; /* Space between buttons */
+}
+.modal-input {
+    margin-bottom: 15px; /* Margin between inputs */
+}
+.btn_modal {
+    padding: 10px 0;
+    flex-grow: 1; /* Buttons grow to fill space */
+}
+
+.btn-modal-outside{
+    background-color: #bf1818;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}

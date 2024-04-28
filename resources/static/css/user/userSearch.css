@@ -1,0 +1,64 @@
+.search-bar {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  position: relative;
+}
+.search-bar input {
+  padding-left: 30px;
+}
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 26%;
+  transform: translateY(-50%);
+  color: #37871C;
+}
+
+
+.not_result{
+    color:red;
+    text-align:center;
+}
+
+
+.menu-header{
+  display:flex;
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.menu-header .menu-header-title {
+  display:inline-block;
+  margin-left: 15px;
+}
+.menu-header .search-icon-header{
+  top: -3px;
+  position: relative;
+}
+
+
+
+
+.mobile-button {
+        background-color: #4CAF50; /* 버튼 배경색 */
+        border: none;
+        color: white; /* 텍스트 색상 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        text-decoration: none; /* 텍스트에 밑줄 없애기 */
+        display: inline-block; /* 인라인 블록 요소로 변경 */
+        font-size: 16px; /* 폰트 크기 */
+        padding: 7px 10px; /* 내부 여백 */
+        border-radius: 5px; /* 테두리 둥글게 */
+        cursor: pointer; /* 커서 포인터로 변경 */
+        transition: background-color 0.3s; /* 배경색 전환 애니메이션 */
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .mobile-button:hover {
+        background-color: #45a049; /* 마우스 호버시 배경색 변경 */
+    }

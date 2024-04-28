@@ -1,0 +1,79 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layout/userHeadTag :: userHead ('전남개발공사 조직도 페이지', 'userDepartment.css')}"></head>
+
+
+<body th:classappend="${darkModeCheck} ? 'dark-mode' : ''">
+    <div class="header">
+        조직도
+    </div>
+
+    <div class="menu-bar">
+        <div class="menu-bar-contents">
+            <span th:each="deptTitle : ${deptTitles}" class="menu-active">
+                <a th:href="@{/userDepartment/{deptId}(deptId=${deptTitle.deptId})}" th:text="${deptTitle.deptTitle}">
+                    메뉴
+                </a>
+            </span>
+        </div>
+    </div>
+
+
+    <div class="contents" >
+
+        <!--부서값-->
+        <div th:each="dept, deptIndex : ${depts}"  class="container mt-3">
+            <a href="" th:href="@{/userDepartment/{deptId}(deptId=${dept.deptId})}">
+                <div class="menu-item">
+                <span th:switch="${deptIndex.index}">
+
+                    <i th:case="0" class="fas fa-building menu-icon"></i>
+                    <i th:case="1" class="fas fa-users menu-icon"></i>
+                    <i th:case="2" class="fas fa-globe menu-icon"></i>
+                    <i th:case="3" class="fas fa-home menu-icon"></i>
+                    <i th:case="4" class="fas fa-network-wired menu-icon"></i>
+                    <i th:case="*" class="fas fa-building menu-icon"></i>
+                    <span th:text="${dept.deptName}">학정부지사</span>
+                </span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+
+
+        <!--유저값-->
+        <hr>
+        <div th:each="user : ${users}" class="contact-card">
+            <a th:href="@{/userDetailPage/{userId}(userId=${user.userId})}">
+                <div class="contact-card-contents">
+<!--                    <img alt="Placeholder image of a female contact" class="contact-image" height="50" src="https://placehold.co/50x50" width="50"/>-->
+                    <img alt="프로필 이미지" class="contact-image" height="50" width="50"
+                         th:src="${user.img != null} ? |/images/${user.img}| : |/images/default_profile.png|"
+                    />
+
+
+                    <div class="contact-info">
+                        <div th:text="${user.name}" class="contact-name">강지은</div>
+                        <div th:text="|${user.dept.deptName} (${user.role})|" class="contact-position">부서 및 직급</div>
+                        <div th:text="${user.work}" class="contact-position">일</div>
+                        <div th:text="|사내번호 : ${user.number}|" class="contact-phone">휴대전화</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+
+<!--    <div th:replace="~{layout/userFloatButton :: floatButton}"></div>-->
+    <div th:replace="~{layout/userFooter :: footer}"></div>
+    <div th:replace="~{layout/userModal :: modal}"></div>
+
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,138 @@
+body{
+    height:1300px;
+}
+
+
+ /* 공통 스타일 */
+    .profile-header {
+
+      /* 배경 색상 */
+         background-color: #60A619;
+         /* 배경 이미지 */
+         background-image: url('/img/bg/profileBG.png');
+         /* 이미지의 반복 방법 설정 */
+         background-repeat: no-repeat;
+         /* 이미지의 위치 설정 (가로, 세로) */
+         background-position: center center;
+         /* 이미지 크기 설정 (cover는 화면에 꽉 차도록 설정) */
+         background-size: revert-layer;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #60A619;
+        color: white;
+        text-align: center;
+             padding: 15px 0;
+    }
+
+    .profile-image-container {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .profile-image {
+        border-radius: 50%;
+        padding: 5px;
+        filter: brightness(50%); /* 이미지 어둡게 만들기 */
+    }
+
+
+
+    .profile-edit-button {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -183%);
+        background-color: #009678;
+        color: white;
+        border: none;
+        padding: 4px 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+
+    .profile-name {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+
+ .profile-info {
+     background-color: white;
+     margin: 10px;
+     padding: 15px;
+     border-radius: 5px;
+ }
+
+ .profile-info .profile{
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+
+ .profile-info .info-key {
+     color: #37871C;
+     font-weight: bold;
+ }
+ .profile-info .info-value {
+     font-size: 16px;
+     margin-bottom: 5px;
+ }
+
+
+
+
+/* 공통 스타일 */
+.profile .info-value input {
+    border: 1px solid #ccc; /* 테두리 스타일 및 색상 */
+    border-radius: 5px; /* 테두리 모서리 둥글게 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    padding: 4px 12px; /* 내용과 테두리 간격 */
+    width: calc(100% - 24px); /* 입력 필드의 너비 */
+    box-sizing: border-box; /* 테두리와 패딩 포함하여 너비 계산 */
+    outline: none; /* 포커스 효과 제거 */
+    transition: border-color 0.3s ease; /* 테두리 색상 변화 시 부드러운 효과 */
+}
+
+.profile .info-value select {
+    border: 1px solid #ccc; /* 테두리 스타일 및 색상 */
+    border-radius: 5px; /* 테두리 모서리 둥글게 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    padding: 4px 12px; /* 내용과 테두리 간격 */
+    width: calc(100% - 24px); /* 입력 필드의 너비 */
+    box-sizing: border-box; /* 테두리와 패딩 포함하여 너비 계산 */
+    outline: none; /* 포커스 효과 제거 */
+    transition: border-color 0.3s ease; /* 테두리 색상 변화 시 부드러운 효과 */
+}
+
+
+/* 포커스 상태일 때의 스타일 */
+.profile .info-value input:focus {
+    border-color: dodgerblue; /* 포커스시 테두리 색상 변경 */
+}
+
+.profile .info-value select:focus {
+    border-color: dodgerblue; /* 포커스시 테두리 색상 변경 */
+}
+
+.mobile-button {
+        background-color: #4CAF50; /* 버튼 배경색 */
+        border: none;
+        color: white; /* 텍스트 색상 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        text-decoration: none; /* 텍스트에 밑줄 없애기 */
+        display: inline-block; /* 인라인 블록 요소로 변경 */
+        font-size: 16px; /* 폰트 크기 */
+        padding: 10px 20px; /* 내부 여백 */
+        border-radius: 5px; /* 테두리 둥글게 */
+        cursor: pointer; /* 커서 포인터로 변경 */
+        transition: background-color 0.3s; /* 배경색 전환 애니메이션 */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .mobile-button:hover {
+        background-color: #45a049; /* 마우스 호버시 배경색 변경 */
+    }

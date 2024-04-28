@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:replace="~{layout/userHeadTag :: userHead ('전남개발공사 조직도 마이페이지', 'userMyPage.css')}"></head>
+<script th:src="@{/js/user/userMyPage.js}" th:inline="javascript" type="text/javascript"></script>
+
+<body th:classappend="${darkModeCheck} ? 'dark-mode' : ''">
+    <div class="profile-header">
+
+        <img alt="Placeholder image for profile picture" class="profile-image" height="150"
+             th:src="${user.img != null} ? |/images/${user.img}| : |/images/default_profile.png|"
+             width="150"/>
+        <div class="profile-name" th:text="${user.name}">
+            박준수
+        </div>
+    </div>
+
+    <div class="contents">
+        <div class="profile-container mt-3 profile-info">
+            <div class="row profile">
+                <div class="col-3 info-key">소속부서</div>
+                <div class="col-9" th:text="${user.dept.deptName}">전라남도 광양시청 전력체제기획단</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">직위</div>
+                <div class="col-9 info-value" th:text="${user.role}">-</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">업무</div>
+                <div class="col-9 info-value" th:text="${user.work}">전력체제기획단 사무</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">구내전화</div>
+                <div class="col-9 info-value" th:text="${user.number}">061-286-5563</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">휴대전화</div>
+                <div class="col-9 info-value" th:text="${user.phoneNumber}">010-8846-0324</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">이메일</div>
+                <div class="col-9 info-value" th:text="${user.email}">seonhee0324@korea.kr</div>
+            </div>
+
+            <button class="mobile-button"
+                    th:onclick="|location.href='@{/userMyPage/Form}'|"
+            >수정</button>
+        </div>
+    </div>
+    <div th:replace="~{layout/userFooter :: footer}"></div>
+    <div th:replace="~{layout/userModal :: modal}"></div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #F1F5F9;
+}
+.sidebar {
+    padding-top:25px;
+
+    /* 배경 색상 */
+    background-color: #2455DF;
+     /* 배경 이미지 */
+     background-image: url('/img/bg/adminBG.png');
+     /* 이미지의 반복 방법 설정 */
+     background-repeat: no-repeat;
+     /* 이미지의 위치 설정 (가로, 세로) */
+     background-position: center bottom;
+     /* 이미지 크기 설정 (cover는 화면에 꽉 차도록 설정) */
+     background-size: revert-layer;
+    min-height: 100vh;
+    color: #ffffff;
+    position:fixed;
+}
+.sidebar .nav-link {
+    color: #ffffff;
+    border-radius: 20px;
+}
+.sidebar .nav-link.active {
+    background-color: #10019b;
+
+}
+
+/* 호버 효과: 배경색 변경 */
+.sidebar .nav-link:hover {
+    background-color: #10019b;
+}
+
+.logout_btn{
+    width:100%;
+    text-align:left;
+}
+
+
+.nav-item{
+    margin: 5px;
+}
+
+.content {
+    background-color: #F1F5F9;
+    padding: 2rem;
+}
+.header {
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-left:15px;
+}
+.top-nav .navbar-toggler {
+    background-color: #EFF2F7;
+    border: none;
+}
+.top-nav .admin-dropdown {
+    cursor: pointer;
+}
+.top-nav .admin-dropdown i {
+    margin-left: 0.5rem;
+}
+
+.notification-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 25%;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    left: 10px;
+}
+
+
+

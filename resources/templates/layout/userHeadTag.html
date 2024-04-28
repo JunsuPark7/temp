@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="userHead (title, cssName)">
+    <!--    공통-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{/js/common/fontawesome.all.min.js}"></script>
+    <script th:src="@{/js/common/jquery.js}"></script>
+    <script th:src="@{/js/common/bootstrap.bundle.min.js}" type="text/javascript"></script>
+    <script th:src="@{/js/user/darkMode.js}" type="text/javascript"></script>
+    <script th:src="@{/js/user/userCommon.js}" type="text/javascript"></script>
+<!--    카카오 공유-->
+    <script src="//developers.kakao.com/sdk/js/kakao.js"></script>
+    <script th:src="@{/js/user/kakaoShare.js}" type="text/javascript"></script>
+
+    <link th:href="@{/css/common/font.css}" rel="stylesheet">
+<!--    <link th:href="@{/css/user/bootstrap.min.css}" rel="stylesheet">-->
+    <link th:href="@{/css/admin/bootstrap.min.css}" href="/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/user/userCommon.css}" rel="stylesheet">
+    <link th:href="@{/css/user/userDarkMode.css}" rel="stylesheet">
+
+    <link rel="shortcut icon" th:href=  "@{/img/home/favicon.ico}" type="image/x-icon">
+    <link rel="icon" th:href="@{/img/home/favicon.ico}" type="image/x-icon">
+
+    <!--    개별-->
+    <title th:text="${title}">전남개발공사</title>
+    <link th:href="@{/css/user/{css}(css = ${cssName})}" rel="stylesheet">
+
+</head>
+</html>

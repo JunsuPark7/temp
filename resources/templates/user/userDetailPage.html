@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:replace="~{layout/userHeadTag :: userHead ('전남개발공사 조직도 유저페이지', 'userMyPage.css')}"></head>
+
+
+<body th:classappend="${darkModeCheck} ? 'dark-mode' : ''">
+
+
+    <div class="profile-header">
+        <div class="back_arrow_div">
+            <a href="#" class="back-arrow" onclick="window.history.back();">
+                <i class="fas fa-arrow-left fa-2x"></i>
+            </a>
+        </div>
+
+        <img alt="프로필 이미지" class="profile-image" height="150" width="150"
+             th:src="${user.img != null} ? |/images/${user.img}| : |/images/default_profile.png|"
+        />
+        <div class="profile-name" th:text="${user.name}">
+            박준수
+        </div>
+    </div>
+
+    <div class="contents">
+        <div class="profile-container mt-3 profile-info">
+            <div class="row profile">
+                <div class="col-3 info-key">소속부서</div>
+                <div class="col-9" th:text="${user.dept.deptName}">전라남도 광양시청 전력체제기획단</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">직위</div>
+                <div class="col-9 info-value" th:text="${user.role}">-</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">업무</div>
+                <div class="col-9 info-value" th:text="${user.work}">전력체제기획단 사무</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">구내전화</div>
+                <div class="col-9 info-value" th:text="${user.number}">061-286-5563</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">휴대전화</div>
+                <div class="col-9 info-value" th:text="${user.phoneNumber}">010-8846-0324</div>
+            </div>
+            <div class="row profile">
+                <div class="col-3 info-key">이메일</div>
+                <div class="col-9 info-value" th:text="${user.email}">seonhee0324@korea.kr</div>
+            </div>
+
+        </div>
+    </div>
+    <div th:replace="~{layout/userFooter :: footer}"></div>
+    <div th:replace="~{layout/userModal :: modal}"></div>
+</body>
+</html>

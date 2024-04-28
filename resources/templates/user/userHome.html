@@ -1,0 +1,76 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layout/userHeadTag :: userHead ('전남개발공사 조직도 홈', 'userHome.css')}"></head>
+<body>
+    <div class="container">
+
+
+
+
+
+
+        <div class="logout_div">
+
+            <form th:if="${#session.getAttribute('AdminCheck')}" th:action="@{/adminCheck}" method="post">
+                <button class="adminCheck_btn" type="submit">
+                    관리자 모드 전환
+                </button>
+            </form>
+
+
+            <form th:action="@{/logout}" method="post">
+                <button class="logout_btn" type="submit">
+                    로그아웃
+                </button>
+            </form>
+        </div>
+
+        <div class="icon-text">
+            <div class="centered-image">
+                <img th:src="@{/img/home/homeLogoWhite.png}"  alt="홈로고" />
+            </div>
+        </div>
+        <h1 class="mb-4">
+            조직도
+        </h1>
+        <div class="row">
+            <div class="col-6">
+                <a th:href="@{/userSearch}">
+                    <div class="card menu_container">
+                        <div class="centered_icon">
+                            <img alt="Icon of a checklist" th:src="@{/img/home/icon01.png}" height="75" width="75"/>
+                        </div>
+                        <div class="card-title">
+                            검색
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6">
+                <a th:href="@{/userDepartment}">
+                    <div class="card menu_container">
+                        <div class="centered_icon">
+                            <img alt="Icon of an organizational chart" height="64" th:src="@{/img/home/icon02.png}" width="64"/>
+                        </div>
+                        <div class="card-title">
+                            조직도
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12">
+                <a th:href="@{/userMyPage}">
+                    <div class="card menu_container">
+                        <div class="centered_icon">
+                            <img alt="Icon of a camera" height="64" th:src="@{/img/home/icon03.png}" width="64"/>
+                        </div>
+                        <div class="card-title">
+                            마이페이지
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

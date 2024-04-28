@@ -1,0 +1,152 @@
+body {
+    transition: background-color 0.5s ease, color 0.5s ease; /* 천천히 배경색과 텍스트 색상이 변경되도록 설정 */
+}
+
+.header,
+.menu-bar,
+.menu-bar span,
+.footer_container,
+.footer,
+.footer-icon,
+.footer-icon.active,
+.menu-item,
+.contact-card,
+.profile-info,
+.profile-header,
+.profile-info .info-key,
+.profile .info-value input,
+.profile .info-value select,
+.contact-position,
+.contact-info .contact-phone,
+.menu-icon,
+.two
+.search-bar input {
+    transition: background-color 0.5s ease, color 0.5s ease; /* 천천히 배경색과 텍스트 색상이 변경되도록 설정 */
+}
+
+.profile-header{
+    transition: background-image 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #202124;
+    color: #fff; /* 텍스트 색상을 밝은 색상으로 변경 */
+}
+
+.dark-mode .header{
+	background-color:#272829;
+}
+
+.dark-mode .menu-bar{
+	background-color:#272829;
+    border-top:1px solid white;
+}
+.dark-mode .menu-bar span {
+	background:#007fff;
+}
+
+.dark-mode .footer_container{
+	background-color:#272829;
+}
+.dark-mode .footer{
+	background-color:#272829;
+}
+.dark-mode .footer-icon{
+	color:#f3f3f3;
+}
+
+.dark-mode .footer-icon.active {
+	color:#007fff;
+}
+
+.dark-mode .menu-item{
+	background-color: #303134;
+}
+
+
+.dark-mode .contact-card{
+    background-color: #303134;
+    color: #f3f3f3;
+}
+
+.dark-mode .profile-info{
+    background-color: #303134;
+}
+
+.dark-mode .profile-header {
+  /* 배경 색상 */
+     background-color: #303134;
+     /* 배경 이미지 */
+     background-image: url('/img/bg/profileBG-dark-mode.png');
+}
+
+ .dark-mode .profile-info .info-key {
+     color: #007fff;
+ }
+
+
+.dark-mode .profile .info-value input{
+    background:#202124;
+    color:white;
+}
+
+.dark-mode .profile .info-value select{
+    background:#202124;
+    color:white;
+}
+
+
+
+.dark-mode .contact-position {
+  color: #f3f3f3;
+}
+.dark-mode .contact-info .contact-phone{
+  color: #007fff;
+}
+
+.dark-mode .search-bar input{
+    background-color: #202124;
+    color:white;
+}
+
+.dark-mode .search-bar input::placeholder{
+	color:white;
+}
+
+
+.dark-mode .two{
+   background: #272829;
+   color:white;
+ }
+
+.dark-mode .menu-icon {
+	color:#a9ff4b;
+}
+
+
+.dark-mode .modal-content {
+      background-color: #3e3b3b; /* 다크 모드 검색 바 배경색 */
+    color: #f3f3f3; /* 다크 모드 검색 바 텍스트 색상 */
+}
+
+.dark-mode .modal-header .btn-close{
+    color: #f3f3f3; /* 다크 모드 검색 바 텍스트 색상 */
+}
+
+.dark-mode .form-select{
+	background-color: #3e3b3b; /* 다크 모드 검색 바 배경색 */
+	color:#f3f3f3;
+}
+
+.dark-mode .form-control{
+	background-color: #3e3b3b; /* 다크 모드 검색 바 배경색 */
+	color:#f3f3f3;
+}
+.dark-mode .form-control::placeholder{
+	color:#f3f3f3;
+}
+
+
+.dark-mode .form-group label {
+    color:#f3f3f3;
+}

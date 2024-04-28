@@ -1,0 +1,68 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@211.171.52.145:1521:JNDC1
+    username: JNDCORG
+    password: JNDCORG
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    open-in-view: false
+    database: ORACLE
+    sequence:
+      start_with: 1
+    properties:
+      hibernate:
+        ddl-auto: none
+        format_sql: true
+        dialect: jndc.jndcorg.dialog.AppOracleDialect
+  devtools:
+    restart:
+      enabled: true
+  output:
+    ansi:
+      enabled: always
+
+  #업로드 사진 크기 제한
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 10MB
+
+
+#로그 디버그 옵션
+#logging.level:
+#  org.hibernate.SQL: debug
+
+#서버 설정
+server:
+  servlet:
+    session:
+      tracking-modes: cookie
+      timeout: 3600
+  tomcat:
+    mbeanregistry:
+      enabled: true
+
+#서버 모니터링 설정
+management:
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: "/jndc"
+      exposure:
+        include: "*"
+info:
+  app:
+    name: 조직도
+    company: 전남개발공사
+#카카오 api key
+kakao:
+  app-key: "78b8d22912cf2f756bcca47442da73f2"

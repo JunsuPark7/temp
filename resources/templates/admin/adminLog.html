@@ -1,0 +1,128 @@
+<html th:replace="~{/layout/adminLayout :: AppLayout(~{::title},~{::link},~{::script},~{::h2},~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<title>조직도 - 로그 관리</title>
+<link th:href="@{/css/admin/adminLog.css}" href="/css/layout.css" rel="stylesheet">
+<link th:href="@{/css/admin/flatpickr.min.css}" href="/css/layout.css" rel="stylesheet">
+<script th:src="@{/js/admin/adminLog.js}" type="text/javascript"></script>
+<script th:src="@{/js/admin/flatpickr.js}" type="text/javascript"></script>
+<script th:src="@{/js/admin/flatpickr_ko.js}" type="text/javascript"></script>
+
+<h2>로그 관리</h2>
+<section class="search-conditions mb-3">
+
+
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <select class="form-select" id="searchCon" name="searchCon">
+                <option value="전체" selected>전체</option>
+                <option value="권한관리">권한관리</option>
+                <option value="직원생성">직원생성</option>
+                <option value="직원수정">직원수정</option>
+                <option value="수정확인">수정확인</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <input type="text" id="searchInput" name="searchInput" class="form-control search-bar" placeholder="검색어를 입력하세요.">
+        </div>
+        <div class="col-auto">
+            <input type="text" id="searchDate" name="searchDate" class="form-control search-bar" placeholder="시작날짜 ~ 종료날짜">
+        </div>
+        <div class="col-auto">
+            <button type="button" id="logSearchBtn" class="btn btn-search">검색</button>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-header">
+                <tr>
+                    <th scope="col" style="width:6%;">번호</th>
+                    <th scope="col"><i class="fas fa-user-cog"></i>작업직원</th>
+                    <th scope="col"><i class="fas fa-user-edit"></i>수정직원</th>
+                    <th scope="col">작업</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">날짜</th>
+                    <th scope="col">IP번호</th>
+                    <th scope="col" style="width:40%">상세</th>
+                </tr>
+                </thead>
+                <!-- 동적으로 만듬.(js파일참고)-->
+                <tbody id="logTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 동적으로 만듬.(js파일참고)-->
+        <div id="paginationLinks" class="page-links">
+        </div>
+
+
+    </div>
+
+
+
+    <!-- 모달 창 -->
+    <div class="modal fade" id="logModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">직원 상세 보기</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                    <div class="modal-body">
+
+                        <div class="profile-header" id="chooseFileButton" title="직원 이미지 수정하기">
+                            <img alt="프로필 이미지" id="preview-Image" class="profile-image" height="150" width="150"
+                                 src="/images/default_profile.png"
+                            />
+                        </div>
+
+                        <input type="hidden" id="log-userId" name="userId" class="form-control" placeholder="아이디"/>
+                        <div class="form-group">
+                            <label for="log-name">이름</label>
+                            <input type="text" id="log-name" name="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-deptName">부서</label>
+                            <input type="text" id="log-deptName" name="deptName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-role">직책</label>
+                            <input type="text" id="log-role" name="role" class="form-control" placeholder="직책">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-lev">직책번호</label>
+                            <input type="text" id="log-lev" name="lev" class="form-control" placeholder="직책번호">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-number">구내전화</label>
+                            <input type="text" id="log-number" name="number" class="form-control" placeholder="구내전화">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-phoneNumber">휴대전화</label>
+                            <input type="text" id="log-phoneNumber" name="phoneNumber" class="form-control" placeholder="휴대전화" maxlength="13">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-email">이메일</label>
+                            <input type="text" id="log-email" name="email" class="form-control" placeholder="이메일">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="log-work">업무</label>
+                            <textarea id="log-work" name="work" class="form-control" rows="3" placeholder="업무"></textarea>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="confirmButton" class="btn btn_modal btn-success" data-bs-dismiss="modal">확인</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
+</html>

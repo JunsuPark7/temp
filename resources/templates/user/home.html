@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="userHead (title, cssName)">
+    <!--    공통-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    개별-->
+    <title>데이터</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <h1>(TEST) 홈페이지에서 전달할 id값</h1>
+
+    <input type="text" id="myButtonInput"/>
+    <button id="myButton">확인</button>
+
+    <div>
+        <h3>테스트용 key값</h3>
+        <p>DU_0000000874</p>
+        <p>DU_0000000804</p>
+        <p>DU_0000000864</p>
+
+        <h3>어드민 key값</h3>
+        <p>DU_0000000999</p>
+        <p>DU_0000000853</p>
+    </div>
+
+</body>
+
+<script>
+
+     $("#myButton").click(function() {
+
+         var userId = $("#myButtonInput").val();
+
+         $.ajax({
+             url: "/login", // 엔드포인트 URL
+             type: "POST",
+             data: {
+                userId: userId
+             }, // JSON 데이터를 문자열로 변환하여 전송
+             success: function(response) {
+                window.location.href = response;
+             },
+             error: function(xhr, status, error) {
+                 console.error("Error:", error); // 실패 시 처리할 코드
+                 // 실패 시 사용자에게 메시지 표시 등의 동작 수행 가능
+                 alert("요청 실패");
+             }
+         });
+     });
+</script>
+
+</html>

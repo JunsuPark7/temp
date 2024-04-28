@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div class="footer_container" th:fragment="footer">
+
+    <div class="share">
+        <i class="fa fa-plus"></i>
+    </div>
+    <div class="one" onclick="shareKakao()">
+        <i class="fas fa-share-alt"></i>
+        <div>공유하기</div>
+    </div>
+    <div class="two">
+        <input class='toggle-checkbox' id="darkModeToggle" type='checkbox' th:checked="${darkModeCheck}" />
+        <i class="fas fa-moon"></i>
+        <div>다크모드</div>
+    </div>
+    <div class="three" id="modal_comment">
+        <i class="far fa-comment-dots"></i>
+        <div>문의하기</div>
+    </div>
+
+    <div class="footer d-flex justify-content-around">
+        <div class="footer-icon">
+            <a th:href="@{/user/userHome}">
+                <i class="fas fa-home"></i>
+                <div class="footer-text">홈</div>
+            </a>
+        </div>
+        <div class="footer-icon"
+             th:class="${#request.requestURI == '/userSearch'} ? 'footer-icon active' : 'footer-icon'"
+        >
+            <a th:href="@{/userSearch}">
+                <i class="fas fa-search"></i>
+                <div class="footer-text">검색</div>
+            </a>
+        </div>
+        <div class="footer-icon"
+             th:class="${#strings.contains(#request.requestURI, '/userDepartment')} ? 'footer-icon active' : 'footer-icon'"
+        >
+            <a th:href="@{/userDepartment}">
+                <i class="fas fa-th"></i>
+                <div class="footer-text">조직도</div>
+            </a>
+        </div>
+        <div class="footer-icon"
+             th:class="${#strings.contains(#request.requestURI, '/userMyPage')} ? 'footer-icon active' : 'footer-icon'"
+        >
+            <a th:href="@{/userMyPage}">
+                <i class="fas fa-user"></i>
+                <div class="footer-text">마이페이지</div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+</html>

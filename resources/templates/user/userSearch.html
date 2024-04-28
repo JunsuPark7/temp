@@ -1,0 +1,66 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/userHeadTag :: userHead ('전남개발공사 조직도 검색', 'userSearch.css')}"></head>
+
+<body th:classappend="${darkModeCheck} ? 'dark-mode' : ''">
+    <div class="contents">
+        <div class="search-bar">
+            <form th:action="@{/userSearch}" method="post">
+                <i class="fas fa-search search-icon"></i>
+                <input class="form-control" placeholder="검색" name="inputValue" type="search"/>
+                <button class="mobile-button" type="submit">검색</button>
+            </form>
+
+        </div>
+
+
+
+        <!--    최근 조회기록..-->
+        <div th:if="${searchRecode}" class="menu-header">
+            <div>
+                <i class="fas fa-search search-icon-header"></i>
+                <h2 class="menu-header-title">최근조회기록</h2>
+            </div>
+            <a th:href="@{/userSearch/RecodeDelete}">삭제</a>
+        </div>
+
+        <div th:each="user : ${users}" class="contact-card">
+
+            <a th:href="@{/userDetailPage/{userId}(userId=${user.userId})}">
+                <div class="contact-card-contents">
+
+                    <img alt="프로필 이미지" class="contact-image" height="50" width="50"
+                         th:src="${user.img != null} ? |/images/${user.img}| : |/images/default_profile.png|"
+                    />
+                    <div class="contact-info">
+
+                        <div th:text="${user.name}" class="contact-name">강지은</div>
+                        <div th:text="|${user.dept.deptName} (${user.role})|" class="contact-position">부서 및 직급</div>
+                        <div th:text="${user.work}" class="contact-position">일</div>
+                        <div th:text="|사내번호 : ${user.number}|" class="contact-phone">휴대전화</div>
+
+                    </div>
+                </div>
+
+            </a>
+        </div>
+
+
+
+        <div th:if="${isNotResult}">
+            <div class="not_result">
+                <p>검색된 결과가 없습니다. 이름, 부서로 검색해주세요.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- ... other contact cards ... -->
+    </div>
+    <div th:replace="~{layout/userFooter :: footer}"></div>
+    <div th:replace="~{layout/userModal :: modal}"></div>
+
+</body>
+</html>
