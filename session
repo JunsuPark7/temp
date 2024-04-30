@@ -1,0 +1,30 @@
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    @PostMapping("/login")
+    public String requestBodyJson(
+            @RequestParam("userId") String userId,
+            HttpServletRequest request
+    ) throws IOException {
+        Optional<User> userOptional = userRepository.findById(userId);
+        if(userOptional.isPresent()){
+            User user = userOptional.get();
+            //세션이 있으면 있는 세션 반환, 없으면 신규 세션 생성
+
+            request.getSession(true).setMaxInactiveInterval(10);
+
+            HttpSession session = request.getSession();
+            //세션에 로그인 회원 정보 보관
+            session.setAttribute(SessionConst.LOGIN_USER, user);
+            return "/home";
+        }else{
+            return "/";
+        }
+    }
+
+
+#yml 파일에서는 기본 1분 이상
+server:
+  servlet:
+    session:
+      tracking-modes: cookie
+      timeout: 60m
